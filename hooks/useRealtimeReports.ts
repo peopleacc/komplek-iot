@@ -210,12 +210,8 @@ export function useRealtimeReports() {
         }
     }, [supabase, checkAndUpdateSiren, stopSiren])
 
-    // Cek sirine saat reports pertama kali di-load
-    useEffect(() => {
-        if (!isLoading) {
-            checkAndUpdateSiren(reports)
-        }
-    }, [isLoading, reports, checkAndUpdateSiren])
+    // Sirine tidak lagi otomatis berbunyi saat pertama kali halaman di-load
+    // (hanya akan berbunyi jika ada laporan kebakaran baru masuk secara realtime)
 
     // ── Update status laporan (dipanggil dari UI) ────────────────
 
