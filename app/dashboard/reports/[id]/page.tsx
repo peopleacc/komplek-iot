@@ -386,16 +386,14 @@ export default function ReportDetailPage() {
                         )}
 
                         {/* Selesai */}
-                        {report.status !== 'selesai' && (
-                            <button
-                                onClick={() => handleUpdateStatus('selesai')}
-                                disabled={updating}
-                                className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 disabled:opacity-60 transition-colors shadow-sm"
-                            >
-                                {updating ? <Loader2 size={17} className="animate-spin" /> : <CheckCircle2 size={17} />}
-                                Tandai Selesai
-                            </button>
-                        )}
+                        <button
+                            onClick={() => handleUpdateStatus('selesai')}
+                            disabled={updating}
+                            className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 disabled:opacity-60 transition-colors shadow-sm"
+                        >
+                            {updating ? <Loader2 size={17} className="animate-spin" /> : <CheckCircle2 size={17} />}
+                            Tandai Selesai
+                        </button>
 
                         {/* Lakukan Sirine */}
                         <button
